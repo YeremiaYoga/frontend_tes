@@ -17,7 +17,7 @@ const LoginForm = () => {
         password: password,
       });
       localStorage.setItem("accessToken",response.data.accessToken);
-      localStorage.setItem("id",response.data.id);
+      localStorage.setItem("userId",response.data.userId);
       
       history("/dashboard");
     } catch (error) {

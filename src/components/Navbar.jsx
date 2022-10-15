@@ -20,7 +20,9 @@ const Navbar = () => {
 
   const Logout = async() => {
     try{
-      await axios.delete("http://localhost:4000/api/logout");
+      await axios.delete("http://localhost:4000/api/logout",{withCredentials:true});
+      localStorage.removeItem("accessToken");
+      localStorage.removeItem("userId");
       navigate("/");
     }catch(error){
       console.log(error);
@@ -32,9 +34,6 @@ const Navbar = () => {
         <div className="flex items-center justify-around border-b border-slate-300">
           <div className="z-50 p-4 md:w-auto w-full flex justify-between  ">
             <h1 className="font-bold text-2xl font-serif">Tes</h1>
-            <div className="text-3xl md:hidden" onClick={() => setOpen(!open)}>
-              <ion-icon name={`${open ? "close" : "menu"}`}></ion-icon>
-            </div>
           </div>
           <ul className="md:flex hidden items-center gap-8 ">
           <li>
@@ -48,17 +47,7 @@ const Navbar = () => {
               <button onClick={Logout}>Logout</button>
             </li>
           </ul>
-          <ul
-            className={`md:hidden bg-white absolute w-full h-96 top-0 py-20 space-y-5 pl-7  rounded duration-500 
-         ${open ? "left-0" : "left-[-100%]"}`}
-          >
-            <li>
-              <Link>Dashboard</Link>
-            </li>
-            <li>
-              <button>logout</button>
-            </li>
-          </ul>
+
         </div>
       </div>
     </div>

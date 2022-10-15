@@ -41,7 +41,6 @@ const Dashboard = () => {
       const response = await axios.get("http://localhost:4000/api/token");
       config.headers.Authorization = `Bearer ${response.data.accessToken}`;
       setToken(response.data.accessToken);
-
     }
     return config;
   }, (error) => {

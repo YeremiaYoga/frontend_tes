@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import jwt_decode from "jwt-decode"
 const Navbar = () => {
-  const [open, setOpen] = useState(false);
+  
   const navigate = useNavigate();
   const [id,setId] = useState([]);
 

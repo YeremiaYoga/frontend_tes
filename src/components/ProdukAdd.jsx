@@ -27,7 +27,7 @@ const ProdukAdd = () => {
         <form onSubmit={saveProduk}>
           <div>
             <div>
-              <label>name Produk</label>
+              <label>Nama Produk</label>
               <div>
                 <input type="text" value={name} onChange={(e) => setName(e.target.value)} className="border-2"></input>
               </div>

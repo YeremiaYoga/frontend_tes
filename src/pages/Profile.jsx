@@ -1,13 +1,11 @@
 import Navbar from "../components/Navbar";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 const Profile = () => {
   const [name, setName] = useState("");
   const [gender, setGender] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const token = localStorage.getItem("accessToken");
 
@@ -25,7 +23,6 @@ const Profile = () => {
     setName(response.data.name);
     setGender(response.data.gender);
     setEmail(response.data.email);
-    setPassword(response.data.password);
   };
   return (
     <div>
